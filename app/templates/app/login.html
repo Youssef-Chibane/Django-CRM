@@ -1,4 +1,5 @@
 {% extends "app/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
     <body>
         <div class="container bg-light shadow-md p-5 form-layout">
@@ -7,7 +8,7 @@
             <br>
             <form method="POST" autocomplete="off">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <br>
                 <button type="submit" class="btn btn-primary w-100 btn-block p-2">
                     Login &nbsp; <i class="fa fa-key" aria-hidden="true"></i>
