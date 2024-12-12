@@ -1,4 +1,33 @@
 {% extends "app/base.html" %}
 {% block content %}
     <h1>Hello from the dashboard page</h1>
+
+    <table class="table table-hover table-light table-bordered  table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Adress</th>
+            <th scope="col">City</th>
+            <th scope="col">Country</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover">
+            {% for record in records %}
+          <tr>
+            <th scope="row">{{ record.id }}</th>
+            <td>{{ record.first_name }}</td>
+            <td>{{ record.last_name }}</td>
+            <td>{{ record.email }}</td>
+            <td>{{ record.phone }}</td>
+            <td>{{ record.adress }}</td>
+            <td>{{ record.city }}</td>
+            <td>{{ record.country }}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
 {% endblock content %}

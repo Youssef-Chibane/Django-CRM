@@ -3,6 +3,7 @@ from .forms import CreateUserForm, LoginForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required, user_passes_test
+from .models import Record
 
 
 def redirect_if_authenticated(user):
@@ -63,6 +64,10 @@ def logout(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'app/dashboard.html')
+
+    records = Record.objects.all()
+    context = {"records": records}
+
+    return render(request, 'app/dashboard.html', context=context)
 
 
