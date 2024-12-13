@@ -129,10 +129,13 @@ def view_record(request, pk):
     context = {'record': record}
     return render(request, 'app/view_record.html', context=context)
 
-# @login_required(login_url='login')record 
-# def delete_record(request):
 
-#     records = Record.objects.all()
-#     context = {"records": records}
 
-#     return render(request, 'app/dashboard.html', context=context)
+@login_required(login_url='login')
+def delete_record(request, pk):
+
+    record = Record.objects.get(id=pk)
+
+    record.delete()
+
+    return redirect("dashboard")
