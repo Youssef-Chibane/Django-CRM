@@ -105,16 +105,31 @@ def create_record(request):
     context = {'form': form}
     return render(request, 'app/create_record.html', context=context)
 
-# @login_required(login_url='login')
-# def update(request):
+@login_required(login_url='login')
+def update_record(request, pk):
 
-#     records = Record.objects.all()
-#     context = {"records": records}
+    record = Record.objects.get(id=pk)
+    form = UpdateRecordForm(instance=record)
 
-#     return render(request, 'app/dashboard.html', context=context)
+    if request.method == "POST":
+        form = UpdateRecordForm(request.POST, instance=record)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+
+    context = {'form': form}
+    return render(request, 'app/update_record.html', context=context)
 
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
+def view_record(request, pk):
+
+    record = Record.objects.get(id=pk)
+
+    context = {'record': record}
+    return render(request, 'app/view_record.html', context=context)
+
+# @login_required(login_url='login')record 
 # def delete_record(request):
 
 #     records = Record.objects.all()

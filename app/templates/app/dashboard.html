@@ -33,7 +33,9 @@
                     <td>{{ record.city }}</td>
                     <td>{{ record.country }}</td>
                     <td>
-                        <button type="button" class="btn btn-success">View</button>
+                        <a href="{% url 'view' record.id %}"
+                           type="button"
+                           class="btn btn-success">View</a>
                     </td>
                 </tr>
             {% endfor %}
