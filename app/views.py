@@ -79,7 +79,7 @@ def logout(request):
 @login_required(login_url='login')
 def dashboard(request):
     # Get all records
-    records = Record.objects.all()
+    records = Record.objects.all().order_by('-created_at')
 
     # Set up pagination
     paginator = Paginator(records, 5)  # Show 10 records per page
