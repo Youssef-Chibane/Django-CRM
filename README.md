@@ -40,7 +40,7 @@ $ source venv/bin/activate
 Install project dependencies:
 
 ```sh
-$ pip install -r requirements/local.txt
+$ pip install -r requirements.txt
 ```  
     
 Then simply apply the migrations:
