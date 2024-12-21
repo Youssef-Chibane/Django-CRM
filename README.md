@@ -3,6 +3,7 @@
 ## Introduction
 
 a simple CRM(Customer Relationship Management) app using python django, css bootstap, sqlite for database
+![CRM-DEMO](./assets/Screenshot%202024-12-21%20at%2008-55-50%20Django-CRM.png)
 
 ## Key Features:
 
@@ -25,31 +26,31 @@ The application uses Django ORM to create databases and tables without requiring
 First clone the repository from Github and switch to the new directory:
 
 ```sh
-    $ git https://github.com/Youssef-Chibane/Django-CRM
-    $ cd Django-CRM
+$ git https://github.com/Youssef-Chibane/Django-CRM
+$ cd Django-CRM
 ```
 
 Create And Activate virualenv:
 
 ```sh
-    $ python -m venv venv
-    $ source venv/bin/activate
+$ python -m venv venv
+$ source venv/bin/activate
 ```  
     
 Install project dependencies:
 
 ```sh
-    $ pip install -r requirements/local.txt
+$ pip install -r requirements/local.txt
 ```  
     
 Then simply apply the migrations:
 
 ```sh
-    $ python manage.py migrate
+$ python manage.py migrate
 ```   
 
 You can now run the development server:
 
 ```sh
-    $ python manage.py runserver
+$ python manage.py runserver
 ```
